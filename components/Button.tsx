@@ -24,7 +24,7 @@ function Button(props: Props) {
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`uppercase p-2 px-4 text-xs font-semibold font-family-vt  border rounded-md cursor-pointer ${className}`}
+      className={`uppercase p-2 px-4 text-xs font-semibold font-family-vt  border  rounded-md cursor-pointer ${className}`}
       style={style}
     >
       {children}

@@ -29,8 +29,8 @@
   --color-surface-chrome: #c8c8d4;
   --color-surface-input: #fffef5;
 
-  --font-family-vt: "VT323", monospace;
-  --font-family-mono: "Share Tech Mono", monospace;
+  --font-vt: "VT323", monospace;
+  --font-mono: "Share Tech Mono", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,7 +43,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono);
 }
 
 @layer utilities {

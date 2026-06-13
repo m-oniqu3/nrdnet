@@ -7,6 +7,20 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { Share_Tech_Mono, VT323 } from "next/font/google";
+
+const vt323 = VT323({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-vt",
+});
+
+const shareTechMono = Share_Tech_Mono({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,11 +48,11 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${vt323.variable} ${shareTechMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <ModalContextProvider>
-          <Navbar />
+          <Navbar user={user} />
           {children}
           <div id="modal-root"></div>
 

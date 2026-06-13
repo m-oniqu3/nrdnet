@@ -8,7 +8,7 @@ function Logo(props: Props) {
 
   return (
     <h1
-      className={`${className} font-family-mono ${alt ? "text-navy" : "text-brand-yellow"} font-bold`}
+      className={`${className} font-vt ${alt ? "text-navy" : "text-brand-yellow"} font-bold`}
     >
       nrd.
       <span className="text-brand-orange">net</span>
