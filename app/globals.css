@@ -12,6 +12,27 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --color-navy: #003399;
+  --color-navy-light: #0055cc;
+  --color-navy-dark: #001a66;
+  --color-navy-highlight: #4488ff;
+  --color-navy-muted: #aaccff;
+
+  --color-brand-yellow: #ffdd00;
+  --color-brand-yellow-dark: #cc9900;
+  --color-brand-orange: #ff6600;
+
+
+  --color-surface-page: #e8e4d8;
+  --color-surface-card: #f5f3ec;
+  --color-surface-chrome: #c8c8d4;
+  --color-surface-input: #fffef5;
+
+  --font-family-vt: "VT323", monospace;
+  --font-family-mono: "Share Tech Mono", monospace;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -23,4 +44,10 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .wrapper {
+    @apply w-11/12 mx-auto max-w-[95%];
+  }
 }
