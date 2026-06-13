@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import Logo from "@/components/Logo";
 import { useModalContext } from "@/context/ModalContext";
 import { AuthMode } from "@/types/auth";
+import { login, signup } from "@/utils/api/auth";
 import { useState } from "react";
 
 function Auth() {
@@ -21,7 +22,7 @@ function Auth() {
 
   return (
     <div
-      className="absolute bottom-0 w-full border border-surface-page bg-surface-card max-w-sm sm:relative "
+      className="absolute bottom-0 w-full sm:w-sm border border-surface-page bg-surface-card  sm:relative "
       onClick={stopPropagation}
     >
       <header className="bg-navy h-14 flex items-center">
@@ -53,7 +54,10 @@ function Auth() {
         </section>
 
         <section className="w-full">
-          <form action="" className="flex flex-col gap-4 w-full">
+          <form
+            action={mode === "login" ? login : signup}
+            className="flex flex-col gap-4 w-full"
+          >
             <div className="flex flex-col gap-4">
               {mode === "signup" && (
                 <div className="item">
@@ -79,9 +83,11 @@ function Auth() {
 
             <div className="w-full">
               {mode === "login" ? (
-                <Button className="w-full">&raquo; enter &raquo;</Button>
+                <Button type="submit" className="w-full">
+                  &raquo; enter &raquo;
+                </Button>
               ) : (
-                <Button className="w-full">
+                <Button type="submit" className="w-full">
                   &raquo; create account &raquo;
                 </Button>
               )}
