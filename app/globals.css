@@ -50,4 +50,23 @@ body {
   .wrapper {
     @apply w-11/12 mx-auto max-w-[95%];
   }
+
+  /* .form-input {
+    @apply bg-surface-input
+  } */
+
+  form {
+
+    .item {
+      @apply flex flex-col
+    }
+
+    label {
+      @apply text-xs font-bold
+    }
+
+    input {
+      @apply bg-surface-page border border-surface-chrome h-10 rounded-md
+    }
+  }
 }
