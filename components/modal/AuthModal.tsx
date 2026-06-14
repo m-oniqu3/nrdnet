@@ -1,7 +1,8 @@
 "use client";
 
 import Auth from "@/components/Auth";
-import Modal from "@/components/Modal";
+import Modal from "@/components/modal/Modal";
+
 import { useModalContext } from "@/context/ModalContext";
 
 function AuthModal() {

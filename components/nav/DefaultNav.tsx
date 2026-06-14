@@ -2,21 +2,15 @@
 
 import Button from "@/components/Button";
 import Logo from "@/components/Logo";
-import AuthModal from "@/components/modal/AuthModal";
 import { useModalContext } from "@/context/ModalContext";
 import { AuthMode } from "@/types/auth";
 
 function DefaultNav() {
-  const {
-    openModal,
-    state: { modal },
-  } = useModalContext();
+  const { openModal } = useModalContext();
 
   function handleAuth(mode: AuthMode) {
     openModal({ type: "AUTH", payload: { mode } });
   }
-
-  const isAuthModalOpen = modal?.type === "AUTH";
 
   return (
     <>
@@ -30,8 +24,6 @@ function DefaultNav() {
           </div>
         </nav>
       </header>
-
-      {isAuthModalOpen && <AuthModal />}
     </>
   );
 }

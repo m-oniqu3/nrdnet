@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import ModalManager from "@/components/modal/ModalManager";
 import { Share_Tech_Mono, VT323 } from "next/font/google";
 
 const vt323 = VT323({
@@ -55,6 +56,7 @@ export default async function RootLayout({
           <Navbar user={user} />
           {children}
           <div id="modal-root"></div>
+          <ModalManager />
 
           {user && (
             <StatusBar

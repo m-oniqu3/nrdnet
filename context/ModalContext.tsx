@@ -24,8 +24,6 @@ type ModalContextValue = {
   stopPropagation(e: React.MouseEvent<HTMLElement, MouseEvent>): void;
 };
 
-type ModalType = "AUTH" | "POST";
-
 export const ModalContext = createContext<ModalContextValue | null>(null);
 
 enum ModalActionEnum {
@@ -44,14 +42,17 @@ export type CloseModalAction = {
 
 export type ModalAction = OpenModalAction | CloseModalAction;
 
+type ModalType = "AUTH" | "POST";
+
 type ModalState<K extends ModalType, P> = {
   type: K;
   payload: P;
 };
 
 type AuthModal = ModalState<"AUTH", { mode: AuthMode }>;
+type PostModal = ModalState<"POST", null>;
 
-type Modal = AuthModal;
+type Modal = AuthModal | PostModal;
 
 type State = {
   modal: Modal | null;

@@ -1,6 +1,6 @@
 "use client";
 
-import Portal from "./Portal";
+import Portal from "@/components/modal/Portal";
 
 type ModalProps = {
   isOpen: boolean;
@@ -14,7 +14,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
   return (
     <Portal>
       <div
-        className="fixed top-16 inset-0 bg-surface-chrome flex items-center justify-center"
+        className="fixed top-16 inset-0 bg-surface-chrome/50"
         onClick={onClose}
       >
         {children}
