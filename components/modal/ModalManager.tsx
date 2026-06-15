@@ -2,7 +2,8 @@
 
 import Auth from "@/components/Auth";
 import Modal from "@/components/modal/Modal";
-import Post from "@/components/modal/Post";
+
+import PostForm from "@/components/posts/PostForm";
 import { useModalContext } from "@/context/ModalContext";
 
 function ModalManager() {
@@ -20,7 +21,7 @@ function ModalManager() {
         return <Auth />;
 
       case "POST":
-        return <Post />;
+        return <PostForm />;
 
       default:
         throw new Error(
